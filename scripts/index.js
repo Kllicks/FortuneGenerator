@@ -10,6 +10,7 @@
 const triggerElement = document.querySelector(`[data-trigger]`);
 const triggerElement2 = document.querySelector(`[data-trigger2]`);
 const outputElement = document.querySelector('[data-output]');
+let imageElement = document.querySelectorAll('img');
 
 const fortunes = [
     "You laugh now, wait till you get home.",
@@ -19,13 +20,28 @@ const fortunes = [
     "You will be hungry again in one hour."
 ];
 const nflTeams = [
-    "Houston Texans",
-    "Atlanta Falcons",
-    "New Orleans Saints",
-    "New York Giants",
-    "Kansas City Chiefts"
+    { 
+        text: "Houston Texans",
+        url: "https://images-na.ssl-images-amazon.com/images/I/61l9aPR4q5L._SX466_.jpg"
+    } ,
+    { 
+        text: "Atlanta Falcons",
+        url: "https://pbs.twimg.com/profile_images/1046749142134009856/XpV9Ak0Z_400x400.jpg"
+    } ,
+    { 
+        text: "New Orleans Saints",
+        url: "http://a.espncdn.com/i/teamlogos/nfl/500/no.png"
+    } ,
+    { 
+        text: "New York Giants",
+        url: "https://www.skinit.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/n/f/nfllgox7.jpg"
+    } ,
+    { 
+        text: "Kansas City Chiefts",
+        url: "http://a.espncdn.com/i/teamlogos/nfl/500/kc.png"
+    } ,
 ]
-// let index = 0;
+let index = 0;
 
 // addEventListener accepts 2 arguments:
 // - a string that identifies the kind of event to listen for
@@ -44,11 +60,20 @@ triggerElement.addEventListener(`click`, function () {
     // }
     
 });
-
+// original for medium exercise:
+// triggerElement2.addEventListener(`click`, function() {
+//     console.log(`NFL`);
+    
+//     const newTeam = nflTeams[Math.floor(Math.random()*nflTeams.length)];
+//     outputElement.textContent = newTeam;
+// });
 triggerElement2.addEventListener(`click`, function() {
     console.log(`NFL`);
-    const newTeam = nflTeams[Math.floor(Math.random()*nflTeams.length)];
+    const newTeam = nflTeams[Math.floor(Math.random()*nflTeams.length)].text;
     outputElement.textContent = newTeam;
+
+    imageElement.setAttribute('src', "http://a.espncdn.com/i/teamlogos/nfl/500/kc.png");
+   
 });
 
 // function triggerEvent (obj) {
