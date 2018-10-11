@@ -10,7 +10,7 @@
 const triggerElement = document.querySelector(`[data-trigger]`);
 const triggerElement2 = document.querySelector(`[data-trigger2]`);
 const outputElement = document.querySelector('[data-output]');
-let imageElement = document.querySelectorAll('img');
+const imageElement = document.querySelector('[data-image]');
 
 const fortunes = [
     "You laugh now, wait till you get home.",
@@ -69,11 +69,12 @@ triggerElement.addEventListener(`click`, function () {
 // });
 triggerElement2.addEventListener(`click`, function() {
     console.log(`NFL`);
-    const newTeam = nflTeams[Math.floor(Math.random()*nflTeams.length)].text;
-    outputElement.textContent = newTeam;
+    const newTeam = nflTeams[Math.floor(Math.random()*nflTeams.length)];
+    outputElement.textContent = newTeam.text;
+    imageElement.src = newTeam.url;
 
-    imageElement.setAttribute('src', "http://a.espncdn.com/i/teamlogos/nfl/500/kc.png");
-   
+    // imageElement.setAttribute('src', "http://a.espncdn.com/i/teamlogos/nfl/500/kc.png");
+    
 });
 
 // function triggerEvent (obj) {

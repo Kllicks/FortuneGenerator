@@ -17,9 +17,12 @@ body {
 }
 
 .quoteDisplay {
-    height: 200px;
+    /* height: 200px; */
+    height: 100%;
+    width: 100%;
     font-size: 24px;
 }
+
 
 .buttonContainer {
     text-align: center;
