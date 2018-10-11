@@ -12,13 +12,13 @@ const triggerElement2 = document.querySelector(`[data-trigger2]`);
 const outputElement = document.querySelector('[data-output]');
 const imageElement = document.querySelector('[data-image]');
 
-const fortunes = [
-    "You laugh now, wait till you get home.",
-    "Fortune not found: Abor, Retry, Ignore?",
-    "About time I got out of that cookie.",
-    "Your resemblance to a muppet will prevent the world from taking you seriously", 
-    "You will be hungry again in one hour."
-];
+// const fortunes = [
+//     "You laugh now, wait till you get home.",
+//     "Fortune not found: Abor, Retry, Ignore?",
+//     "About time I got out of that cookie.",
+//     "Your resemblance to a muppet will prevent the world from taking you seriously", 
+//     "You will be hungry again in one hour."
+// ];
 const nflTeams = [
     { 
         text: "Houston Texans",
@@ -41,25 +41,54 @@ const nflTeams = [
         url: "http://a.espncdn.com/i/teamlogos/nfl/500/kc.png"
     } ,
 ]
-let index = 0;
+const nbaTeams = [
+    { 
+        text: "Houston Rockets",
+        url: "https://pbs.twimg.com/profile_images/1043168084565970946/Mo-p2qK3_400x400.jpg"
+    } ,
+    { 
+        text: "Atlanta Hawks",
+        url: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/8164fa21831283.5630835a3f3a0.jpg"
+    } ,
+    { 
+        text: "Los Angeles Lakers",
+        url: "http://a.espncdn.com/i/teamlogos/nba/500/lal.png"
+    } ,
+    { 
+        text: "New York Knicks",
+        url: "https://s7d2.scene7.com/is/image/aeo/sbt_cat8650028_PNG_sm?scl=2&qlt=100&fmt=png-alpha"
+    } ,
+    { 
+        text: "Boston Celtics",
+        url: "http://a.espncdn.com/i/teamlogos/nba/500/bos.png"
+    } ,
+]
+// let index = 0;
 
 // addEventListener accepts 2 arguments:
 // - a string that identifies the kind of event to listen for
 // - a function that says what to do when the event happens
 
-//var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
+// triggerElement.addEventListener(`click`, function () {
+//     console.log(`fortune`);
+//     // const newFortune = fortunes.pop();
+//     // const newFortune = fortunes[index];
+//     const newFortune = fortunes[Math.floor(Math.random()*fortunes.length)];
+//     outputElement.textContent = newFortune;
+//     // index++;
+//     // if (index > (fortunes.length - 1)){
+//     //     index = 0;
+//     // }
+    
+// });
 triggerElement.addEventListener(`click`, function () {
-    console.log(`fortune`);
-    // const newFortune = fortunes.pop();
-    // const newFortune = fortunes[index];
-    const newFortune = fortunes[Math.floor(Math.random()*fortunes.length)];
-    outputElement.textContent = newFortune;
-    // index++;
-    // if (index > (fortunes.length - 1)){
-    //     index = 0;
-    // }
+    console.log(`nba`);
+    const newTeam = nbaTeams[Math.floor(Math.random()*nbaTeams.length)];
+    outputElement.textContent = newTeam.text;
+    imageElement.src = newTeam.url;
     
 });
+
 // original for medium exercise:
 // triggerElement2.addEventListener(`click`, function() {
 //     console.log(`NFL`);
@@ -72,19 +101,13 @@ triggerElement2.addEventListener(`click`, function() {
     const newTeam = nflTeams[Math.floor(Math.random()*nflTeams.length)];
     outputElement.textContent = newTeam.text;
     imageElement.src = newTeam.url;
-
-    // imageElement.setAttribute('src', "http://a.espncdn.com/i/teamlogos/nfl/500/kc.png");
     
 });
 
 // function triggerEvent (obj) {
-//     const newObj = obj[index];
-//     outputElement.textContent = newObj;
-//     index++;
-//     if (index > (obj.length - 1)){
-//         index = 0;
-//     }
+//     const newItem = obj[Math.floor(Math.random()*obj.length)];
+//     outputElement.textContent = newItem.text;
+//     imageElement.src = newItem.url;
 // }
-
-// triggerElement.addEventListener(`click`, triggerEvent(fortunes));
 // triggerElement2.addEventListener(`click`, triggerEvent(nflTeams));
+
