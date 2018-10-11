@@ -9,7 +9,16 @@ console.log(`this works`);
 
 
 // 1. make some code run when i click the button
+const triggerElement = document.querySelector(`[data-trigger]`);
 
+function hello() {
+    console.log(`hello addEventListener!`);
+}
+
+// addEventListener accepts 2 arguments:
+// - a string that identifies the kind of event to listen for
+// - a function that says what to do when the event happens
+triggerElement.addEventListener(`click`, hello);
 
 // 2. Write some text to the page on button click
 
